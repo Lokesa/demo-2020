@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>getAll</title>
+    <script src="../static/js/jquery-3.1.1.js" th:href="@{/js/jquery-3.1.1.js}"></script>
+    <style type="text/css">
+        table
+        {
+            width: 200px;
+            min-height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border:1px solid #ccc;
+            border-collapse: collapse;
+        }
+        th
+        {
+            border: black solid 1px;
+            padding: 3px;
+        }
+        td
+        {
+            border: black solid 1px;
+            padding: 3px;
+        }
+        .id
+        {
+            width: 60px;
+            text-align: center;
+        }
+        .username
+        {
+            width: 160px;
+            text-align: center;
+        }
+        .password
+        {
+            width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+<div  class="table-responsive">
+    <table  class="table table-striped table-sm">
+        <thead>
+        <tr>
+            <th class='id'>id</th>
+            <th class='username'>username</th>
+            <th class='password'>password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="emp,iterStat:${emps}">
+            <td th:text="${emp.id}" align="center"></td>
+            <td th:text="${emp.username}" align="center"><!--[[${emp.username}]]--></td>
+            <td th:text="${emp.password}" align="center"> </td>
+            <!-- <td th:text="${emp.gender}==0?'女':'男'"></td>
+             <td th:text="${emp.department.departmentName}"></td>-->
+            <!--<td th:text="${#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')}"></td>-->
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</main>
+</body>
+</html>
