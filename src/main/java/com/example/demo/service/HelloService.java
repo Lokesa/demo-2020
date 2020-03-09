@@ -31,6 +31,6 @@ public class HelloService {
         return helloDao.getOne(id);
     }
     public static void main(String[] args) {
-        //System.out.println(HelloService.class.getOne("1"));
+         System.out.println("");
     }
 }
